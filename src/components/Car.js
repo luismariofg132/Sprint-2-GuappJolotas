@@ -21,7 +21,7 @@ const Car = () => {
                 productos.map(prod => (
                     <>
                         <DivProducto>
-                            <img src={prod.imagen} />
+                            <img src={prod.imagen} alt='producto' />
                             <SpanNombre>{prod.nombre}</SpanNombre>
                             <SpanPrecio>$ {prod.precio} MXN</SpanPrecio>
                         </DivProducto>
