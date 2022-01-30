@@ -102,7 +102,7 @@ const Seleccion = () => {
                         </>
                     ))
                 }
-                <BotonAgregar onClick={() => agregarcar()} type="button">Agregar</BotonAgregar>
+                <BotonAgregar onClick={() => agregarcar()} type="button">Ir a pagar ${precio1} + bebida</BotonAgregar>
             </ContAdicion>
         </Cont>
     );
