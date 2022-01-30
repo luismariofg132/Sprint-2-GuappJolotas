@@ -10,7 +10,7 @@ export default class Home extends Component {
       <div>
         <nav>
           <Link to={"/"}></Link>
-          <Link to="/" className="carrito">
+          <Link to="/car" className="carrito">
             <AiOutlineShoppingCart className="carrito" />
           </Link>
         </nav>

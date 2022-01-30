@@ -47,17 +47,17 @@ const Seleccion = () => {
     const agregarcar = () => {
         const productoComprar = {
             precio1,
-            bebidaSelec,
             cantidad
         }
 
         productos.push(productoComprar)
+        productos.push(bebidaSelec)
         localStorage.setItem('productCar', JSON.stringify(productos))
     }
 
-    const bebidaSelect = (idB, nombreB, precioB) => {
+    const bebidaSelect = (id, nombre, precio, imagen) => {
         setbebidaSelec({
-            idB, nombreB, precioB
+            id, nombre, precio, imagen
         })
     }
 
@@ -94,7 +94,7 @@ const Seleccion = () => {
                     bebidas.map(bebi => (
                         <>
                             <ItemBebidas key={bebi.id}>
-                                <Check type="checkbox" name="" id={bebi.id} onChange={() => bebidaSelect(bebi.id, bebi.nombre, bebi.precio)} />
+                                <Check type="checkbox" name="" id={bebi.id} onChange={() => bebidaSelect(bebi.id, bebi.nombre, bebi.precio, bebi.imagen)} />
                                 <Bebida src={bebi.imagen} alt={bebi.nombre} />
                                 <NombreBe>{bebi.nombre}</NombreBe>
                                 <PrecioBe>+ ${bebi.precio} MXN</PrecioBe>
