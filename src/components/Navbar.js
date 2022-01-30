@@ -1,4 +1,3 @@
-import { button } from 'bootstrap';
 import styled from 'styled-components';
 
 const Link = () => {
