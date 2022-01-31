@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar1";
 // import Seleccion from "../components/Seleccion";
 
 export default class Home extends Component {
