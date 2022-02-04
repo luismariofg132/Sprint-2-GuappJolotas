@@ -98,14 +98,14 @@ const Seleccion = ({ comida }) => {
             <ContAdicion>
                 {
                     bebidas.map(bebi => (
-                        <>
-                            <ItemBebidas key={bebi.id}>
-                                <Check type="checkbox" name="" id={bebi.id} onChange={() => bebidaSelect(bebi.id, bebi.nombre, bebi.precio, bebi.imagen)} />
-                                <Bebida src={bebi.imagen} alt={bebi.nombre} />
-                                <NombreBe>{bebi.nombre}</NombreBe>
-                                <PrecioBe>+ ${bebi.precio} MXN</PrecioBe>
-                            </ItemBebidas>
-                        </>
+
+                        <ItemBebidas key={bebi.id}>
+                            <Check type="checkbox" name="" id={bebi.id} onChange={() => bebidaSelect(bebi.id, bebi.nombre, bebi.precio, bebi.imagen)} />
+                            <Bebida src={bebi.imagen} alt={bebi.nombre} />
+                            <NombreBe>{bebi.nombre}</NombreBe>
+                            <PrecioBe>+ ${bebi.precio} MXN</PrecioBe>
+                        </ItemBebidas>
+
                     ))
                 }
                 <BotonAgregar onClick={() => agregarcar()} type="button">Ir a pagar ${precio1} + bebida</BotonAgregar>
