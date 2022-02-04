@@ -4,14 +4,16 @@ import { BsPlusCircle } from 'react-icons/bs'
 import { AiOutlineMinusCircle } from 'react-icons/ai'
 import { Atras, Bebida, BotonAgregar, BotonesCont, Cantidad, Check, Cont, ContAdicion, Contador, ContProduct, ContSabores, Descrip, ItemBebidas, Navb, NombreBe, NombreProd, PrecioBe, PrecioProd, Product, Sabores, SegSubtitulo, Subtitulo } from '../styles/StyledSeleccion';
 import { urlBebidas, urlSabores } from '../helpers/Url';
+import { useParams } from 'react-router-dom';
 
-const Seleccion = () => {
+const Seleccion = ({ comida }) => {
     const productos = JSON.parse(localStorage.getItem('productCar')) || []
     const [cantidad, setcantidad] = useState(1);
     const [precio1, setprecio1] = useState(25);
     const [bebidas, setbebidas] = useState([]);
     const [bebidaSelec, setbebidaSelec] = useState([]);
     const [sabor, setsabor] = useState([]);
+    const { id } = useParams()
 
     const consultBebi = async () => {
         const resp = await fetch(urlBebidas)
@@ -61,16 +63,20 @@ const Seleccion = () => {
         })
     }
 
+    const producto = comida.find((product) => product.id === Number(id))
+    const { imgprincipal, nombrep } = producto
+    console.log(nombrep)
+
     return (
         <Cont>
             <Navb>
                 <Atras ><IoIosArrowBack /></Atras>
             </Navb>
             <ContProduct>
-                <Product src="https://res.cloudinary.com/jadergomez/image/upload/v1643558593/G-VERDE_ktkshe_fstbfk.png" alt="Prod" />
+                <Product src={imgprincipal} alt="Prod" />
             </ContProduct>
             <center>
-                <NombreProd>Guajolota de Tamal Verde</NombreProd>
+                <NombreProd>{nombrep}</NombreProd>
                 <PrecioProd>${precio1} MXN</PrecioProd>
             </center>
             <Contador>
@@ -82,8 +88,8 @@ const Seleccion = () => {
             <Subtitulo>Sabor</Subtitulo>
             <ContSabores>
                 {
-                    sabor.map(sab => (
-                        <Sabores src={sab.imagen} alt={sab.nombre} key={sab.id} />
+                    sabor.map((sab, index) => (
+                        <Sabores src={sab.imagen} alt={sab.nombre} key={index} />
                     ))
                 }
             </ContSabores>

@@ -3,10 +3,10 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { GuajolotaCategoria } from "../components/GuajolotaCategoria";
 import { BebidaCategoria } from "../components/BebidaCategoria";
 import { TamalCategoria } from "../components/TamalCategoria";
-import { DetallesComida } from "../components/DetallesComida";
 import { Navbar } from "../components/Navbar";
 import { Principal } from "../containers/Principal";
 import { url } from "../helpers/Url";
+import Seleccion from "../components/Seleccion";
 
 
 export const AppRouters = () => {
@@ -31,7 +31,7 @@ export const AppRouters = () => {
                 />
                 <Route path="/bebida" element={<BebidaCategoria comida={comidas} />} />
                 <Route path="/tamal" element={<TamalCategoria comida={comidas} />} />
-                <Route path="/detalle/:id" element={<DetallesComida />} />
+                <Route path="/detalle/:id" element={<Seleccion comida={comidas} />} />
                 <Route path="/principal" element={<Principal />} />
                 <Route path="*" element={<Navigate to="/principal" />} />
             </Routes>
