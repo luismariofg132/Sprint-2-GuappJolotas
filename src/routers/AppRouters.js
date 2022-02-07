@@ -7,7 +7,7 @@ import { Navbar } from "../components/Navbar";
 import { Principal } from "../containers/Principal";
 import { url } from "../helpers/Url";
 import Seleccion from "../components/Seleccion";
-
+import Car from "../components/Car";
 
 export const AppRouters = () => {
     const [comidas, setComidas] = useState([]);
@@ -34,6 +34,7 @@ export const AppRouters = () => {
                 <Route path="/detalle/:id" element={<Seleccion comida={comidas} />} />
                 <Route path="/principal" element={<Principal />} />
                 <Route path="*" element={<Navigate to="/principal" />} />
+                <Route path="/car" element={<Car />} />
             </Routes>
         </BrowserRouter>
     );

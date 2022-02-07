@@ -48,7 +48,9 @@ const Seleccion = ({ comida }) => {
 
     const agregarcar = () => {
         const productoComprar = {
-            precio1,
+            id,
+            imagen: imgprincipal,
+            precio: precio1,
             cantidad
         }
 
